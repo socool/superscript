@@ -22,9 +22,7 @@ const createUserModel = function createUserModel(db, factSystem, logger) {
       stars: Object,
     }],
   });
-
   userSchema.set('versionKey', false);
-
   userSchema.pre('save', function (next) {
     debug.verbose('Pre-Save Hook');
     // save a full log of user conversations, but just in case a user has a
